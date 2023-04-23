@@ -234,7 +234,14 @@ function Navbar() {
 										Resume
 									</motion.button>
 								</a>
-								<div className='flex gap-6'>
+								<motion.div
+									initial={{ x: -500, opacity: 0, scale: 0.5 }}
+									animate={{ x: 0, opacity: 1, scale: 1 }}
+									transition={{
+										duration: 1.5,
+									}}
+									className='flex gap-2'
+								>
 									<a href='https://github.com/WebZerefos'>
 										<motion.span
 											whileHover={{ scale: [null, 1.5, 1.4] }}
@@ -280,12 +287,19 @@ function Navbar() {
 											<TfiTwitter />
 										</motion.span>
 									</a>
-								</div>
-								<div className='self-center  items-center justify-center'>
+								</motion.div>
+								<motion.div
+									initial={{ y: 500, opacity: 0, scale: 0.5 }}
+									animate={{ y: 0, opacity: 1, scale: 1 }}
+									transition={{
+										duration: 1.5,
+									}}
+									className='self-center  items-center justify-center'
+								>
 									<a href='mailto:victor.zerefos@gmail.com'>
 										<p className='text-md  tracking-wide text-slate-500'>victor.zerefos@gmail.com</p>
 									</a>
-								</div>
+								</motion.div>
 							</div>
 						</motion.div>
 					</div>
