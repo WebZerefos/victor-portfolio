@@ -3,6 +3,7 @@ import { createClient, groq } from "next-sanity"
 import clientConfig from "./config/client-config"
 import { About } from "@/types/About"
 import { Skill } from "@/types/Skill"
+import { Project } from "@/types/Project"
 
 export const getAbout = async (): Promise<About> => {
 	return createClient(clientConfig).fetch(
@@ -25,7 +26,7 @@ export const getSkills = async (): Promise<Skill[]> => {
 	)
 }
 
-export const getProjects = async (): Promise<Projec[]> => {
+export const getProjects = async (): Promise<Project[]> => {
 	return createClient(clientConfig).fetch(
 		groq`*[_type == 'project']{
       _id,

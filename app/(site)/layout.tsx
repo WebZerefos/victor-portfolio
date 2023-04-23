@@ -9,10 +9,8 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang='en'>
-			<body className='w-full h-auto bg-bodyColor text-lightText py-2'>
-				<div className='max-w-screen-2xl mx-auto px-16 font-titleFont'>
-					<Navbar />
-				</div>
+			<body className='w-full h-screen font-bodyFont bg-bodyColor text-lightText overflow-x-hidden overflow-y-scroll scrollbar scrollbar-thumb-designColor/20'>
+				<Navbar />
 				{children}
 			</body>
 		</html>
