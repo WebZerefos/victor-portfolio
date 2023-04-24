@@ -18,12 +18,6 @@ const Home = async () => {
 	const about = await getAbout()
 	const projects = await getProjects()
 
-	useEffect(() => {
-		skills
-		about
-		projects
-	}, [])
-
 	return (
 		<div className='w-full h-[88vh] xl:flex items-center gap-20 justify-between'>
 			<motion.div
