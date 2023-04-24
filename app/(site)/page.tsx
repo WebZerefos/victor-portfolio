@@ -11,11 +11,19 @@ import { getAbout, getProjects, getSkills } from "@/sanity/sanity-utils"
 import { AiFillThunderbolt } from "react-icons/ai"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
+import { useEffect } from "react"
 
 const Home = async () => {
 	const skills = await getSkills()
 	const about = await getAbout()
 	const projects = await getProjects()
+
+	useEffect(() => {
+		skills
+		about
+		projects
+	}, [])
+
 	return (
 		<div className='w-full h-[88vh] xl:flex items-center gap-20 justify-between'>
 			<motion.div
