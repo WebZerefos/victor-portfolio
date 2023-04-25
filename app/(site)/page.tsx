@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image"
 import { motion } from "framer-motion"
 
@@ -11,7 +10,6 @@ import { getAbout, getProjects, getSkills } from "@/sanity/sanity-utils"
 import { AiFillThunderbolt } from "react-icons/ai"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
-import { useEffect } from "react"
 
 const Home = async () => {
 	const skills = await getSkills()
@@ -56,7 +54,7 @@ const Home = async () => {
 								</p>
 								<p>Aqui estão algumas das tecnologias que venho trabalhando e aprendendo:</p>
 
-								<ul className='max-w-[450px]  grid grid-cols-2 gap-2'>
+								<ul className='max-w-[450px] grid grid-cols-2 gap-2'>
 									<>
 										{skills.map((skill) => (
 											<li
