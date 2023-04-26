@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar"
 import "../globals.css"
+export const revalidate = 60
 
 export const metadata = {
 	title: "Victor Portfolio",
