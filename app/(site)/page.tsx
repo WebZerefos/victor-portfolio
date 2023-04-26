@@ -94,7 +94,7 @@ const Home = async () => {
 							{projects.map((project) => (
 								<div
 									key={project._id}
-									className='w-full grid grid-cols-2 md:grid-cols-3 p-4'
+									className='w-full md:w-1/3 p-4'
 								>
 									<motion.div
 										initial={{ opacity: 0 }}
