@@ -8,50 +8,45 @@ function LeftSide() {
 	return (
 		<div className='w-full h-full flex flex-col items-center justify-end gap-6 text-lightText'>
 			<div className='flex flex-col gap-6'>
-				<a href='https://github.com/WebZerefos'>
-					<motion.span
-						whileHover={{ scale: [null, 1.5, 1.4] }}
-						transition={{ duration: 0.1 }}
-						className='w-10 h-10 text-xl bg-slate-700 rounded-full inline-flex items-center justify-center hover:text-designColor cursor-pointer hover:-translate-y2 transition-all duration-300'
-					>
+				<a
+					href='https://github.com/WebZerefos'
+					className='hover:scale-125 transition duration-300'
+				>
+					<span className='w-10 h-10 text-xl bg-slate-700 rounded-full inline-flex items-center justify-center'>
 						<RiGithubLine />
-					</motion.span>
+					</span>
 				</a>
-				<a href='https://linkedin.com/in/victor-zerefos-aaa35297'>
-					<motion.span
-						whileHover={{ scale: [null, 1.5, 1.4] }}
-						transition={{ duration: 0.1 }}
-						className='w-10 h-10 text-xl bg-slate-700 rounded-full inline-flex items-center justify-center hover:text-designColor cursor-pointer hover:-translate-y2 transition-all duration-300'
-					>
+				<a
+					href='https://linkedin.com/in/victor-zerefos-aaa35297'
+					className='hover:scale-125 transition duration-300'
+				>
+					<span className='w-10 h-10 text-xl bg-slate-700 rounded-full inline-flex items-center justify-center'>
 						<TfiLinkedin />
-					</motion.span>
+					</span>
 				</a>
-				<a href='https://instagram.com/victorzerefos?igshid=YmMyMTA2M2Y='>
-					<motion.span
-						whileHover={{ scale: [null, 1.5, 1.4] }}
-						transition={{ duration: 0.1 }}
-						className='w-10 h-10 text-xl bg-slate-700 rounded-full inline-flex items-center justify-center hover:text-designColor cursor-pointer hover:-translate-y2 transition-all duration-300'
-					>
+				<a
+					href='https://instagram.com/victorzerefos?igshid=YmMyMTA2M2Y='
+					className='hover:scale-125 transition duration-300'
+				>
+					<span className='w-10 h-10 text-xl bg-slate-700 rounded-full inline-flex items-center justify-center'>
 						<TfiInstagram />
-					</motion.span>
+					</span>
 				</a>
-				<a href='https://www.facebook.com/victorzerefos?mibextid=LQQJ4d'>
-					<motion.span
-						whileHover={{ scale: [null, 1.5, 1.4] }}
-						transition={{ duration: 0.1 }}
-						className='w-10 h-10 text-xl bg-slate-700 rounded-full inline-flex items-center justify-center hover:text-designColor cursor-pointer hover:-translate-y2 transition-all duration-300'
-					>
+				<a
+					href='https://www.facebook.com/victorzerefos?mibextid=LQQJ4d'
+					className='hover:scale-125 transition duration-300'
+				>
+					<span className='w-10 h-10 text-xl bg-slate-700 rounded-full inline-flex items-center justify-center'>
 						<TfiFacebook />
-					</motion.span>
+					</span>
 				</a>
-				<a href='https://twitter.com/onlyzerefos'>
-					<motion.span
-						whileHover={{ scale: [null, 1.5, 1.4] }}
-						transition={{ duration: 0.1 }}
-						className='w-10 h-10 text-xl bg-slate-700 rounded-full inline-flex items-center justify-center hover:text-designColor cursor-pointer hover:-translate-y2 transition-all duration-300'
-					>
+				<a
+					href='https://twitter.com/onlyzerefos'
+					className='hover:scale-125 transition duration-300'
+				>
+					<span className='w-10 h-10 text-xl bg-slate-700 rounded-full inline-flex items-center justify-center'>
 						<TfiTwitter />
-					</motion.span>
+					</span>
 				</a>
 			</div>
 			<span className='w-[2px] h-36 bg-slate-400'></span>

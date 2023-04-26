@@ -41,8 +41,11 @@ function Navbar() {
 		<section className='w-full h-20 lg:h-[8vh] fixed top-0 z-50 bg-bodyColor px-4 drop-shadow-lg'>
 			<div className='max-w-container h-full mx-auto py-1 font-titleFont flex items-center justify-between'>
 				<motion.div
-					transition={spring}
-					animate={{ scale: 1.2 }}
+					initial={{ x: -500, opacity: 0, scale: 0.5 }}
+					animate={{ x: 0, opacity: 1, scale: 1 }}
+					transition={{
+						duration: 0.5,
+					}}
 				>
 					<Image
 						src={logoImg}
@@ -50,19 +53,21 @@ function Navbar() {
 						className='w-12 rounded-full'
 					/>
 				</motion.div>
-				<div className='hidden mdl:inline-flex items-center gap-12 '>
+				<motion.div
+					initial={{ x: 500, opacity: 0, scale: 0.5 }}
+					animate={{ x: 0, opacity: 1, scale: 1 }}
+					transition={{
+						duration: 0.5,
+					}}
+					className='hidden mdl:inline-flex items-center gap-12 '
+				>
 					<ul className='flex gap-12 text-xs'>
 						<Link
 							href={"#home"}
 							onClick={onClickScroll}
 							className='flex items-center gap-1 font-medium text-lightText hover:text-designColor cursor-pointer duration-300 nav-link'
 						>
-							<motion.li
-								transition={spring}
-								animate={{ scale: 1.2 }}
-							>
-								Home
-							</motion.li>
+							<li>Home</li>
 						</Link>
 
 						<Link
@@ -70,12 +75,7 @@ function Navbar() {
 							onClick={onClickScroll}
 							className='flex items-center gap-1 font-medium text-lightText hover:text-designColor cursor-pointer duration-300 nav-link'
 						>
-							<motion.li
-								transition={spring}
-								animate={{ scale: 1.2 }}
-							>
-								About
-							</motion.li>
+							<li>Sobre</li>
 						</Link>
 
 						<Link
@@ -83,39 +83,23 @@ function Navbar() {
 							onClick={onClickScroll}
 							className='flex items-center gap-1 font-medium text-lightText hover:text-designColor cursor-pointer duration-300 nav-link'
 						>
-							<motion.li
-								transition={spring}
-								animate={{ scale: 1.2 }}
-							>
-								Projects
-							</motion.li>
+							<li>Projetos</li>
 						</Link>
 						<Link
 							href={"#contact"}
 							onClick={onClickScroll}
 							className='flex items-center gap-1 font-medium text-lightText hover:text-designColor cursor-pointer duration-300 nav-link'
 						>
-							<motion.li
-								transition={spring}
-								animate={{ scale: 1.2 }}
-							>
-								Contacts
-							</motion.li>
+							<li>Contato</li>
 						</Link>
 					</ul>
 					<a
 						href='resume.pdf'
 						target='_blank'
 					>
-						<motion.button
-							transition={spring}
-							animate={{ scale: 1.2 }}
-							className='px-4 py-2 rounded-md text-designColor text-xs border border-designColor'
-						>
-							Resume
-						</motion.button>
+						<button className='px-4 py-2 rounded-md  text-xs border border-designColor hover:border-white'>Resume</button>
 					</a>
-				</div>
+				</motion.div>
 				{/* hamburger icon  */}
 				<div
 					onClick={() => setShowMenu(true)}

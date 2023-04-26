@@ -11,6 +11,7 @@ import { getAbout, getProjects, getSkills } from "@/sanity/sanity-utils"
 import { AiFillThunderbolt } from "react-icons/ai"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
+import Link from "next/link"
 
 const Home = async () => {
 	const skills = await getSkills()
@@ -38,7 +39,7 @@ const Home = async () => {
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
-						transition={{ delay: 1.6 }}
+						transition={{ delay: 1.5 }}
 					>
 						<Title title='Sobre mim' />
 						<div className='flex flex-col lgl:flex-row gap-16'>
@@ -86,37 +87,40 @@ const Home = async () => {
 				{/* Projects */}
 				<section
 					id='project'
-					className='max-w-container mx-auto lgl:px-20 py-24 '
+					className='max-w-container mx-auto lgl:px-20 py-24'
 				>
-					<Title title='Projects' />
-					<div className='w-full flex flex-col items-center justify-center gap-28 mt-10'>
-						<div className='flex flex-wrap justify-center'>
-							{projects.map((project) => (
-								<div
-									key={project._id}
-									className='w-full md:w-1/3 p-4'
-								>
-									<motion.div
-										initial={{ opacity: 0 }}
-										animate={{ opacity: 1 }}
-										transition={{ delay: 1.8 }}
-										className='bg-white rounded-lg shadow-lg'
-									>
-										<Image
-											src={project.image}
-											width={350}
-											height={250}
-											alt={project.alt}
-											className='w-full  object-cover rounded-t-lg'
-										/>
-										<div className='p-2'>
-											<h3 className='text-lg text-slate-700 font-medium mb-2'>{project.name}</h3>
-										</div>
-									</motion.div>
-								</div>
-							))}
-						</div>
-					</div>
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ delay: 2.5 }}
+					>
+						<Title title='Projetos' />
+					</motion.div>
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ delay: 2.5 }}
+						className='mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-8'
+					>
+						{projects.map((project) => (
+							<Link
+								href={"/"}
+								key={project._id}
+								className='border border-slate-50 rounded-lg p-1 shadow-sm hover:scale-105 transition duration-500 hover:border-orange-200'
+							>
+								{project.image && (
+									<Image
+										src={project.image}
+										alt={project.alt}
+										width={650}
+										height={300}
+										className='object-cover rounded-lg'
+									/>
+								)}
+								<div className='mt-3 font-extrabold'>{project.name}</div>
+							</Link>
+						))}
+					</motion.div>
 				</section>
 
 				{/* contact */}
