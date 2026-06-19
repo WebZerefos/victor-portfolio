@@ -1,17 +1,15 @@
-"use client"
 import Image from "next/image"
-import { motion } from "framer-motion"
 
 import LeftSide from "@/components/LeftSide"
 import Middle from "@/components/Middle"
 import Title from "@/components/Title"
-import RightSitde from "@/components/RightSitde"
+import RightSide from "@/components/RightSide"
+import FadeIn from "@/components/FadeIn"
 
 import { getAbout, getProjects, getSkills } from "@/sanity/sanity-utils"
 import { AiFillThunderbolt } from "react-icons/ai"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
-import Link from "next/link"
 
 const Home = async () => {
 	const skills = await getSkills()
@@ -20,14 +18,7 @@ const Home = async () => {
 
 	return (
 		<div className='w-full h-[88vh] xl:flex items-center gap-20 justify-between'>
-			<motion.div
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ delay: 1.5 }}
-				className='hidden xl:inline-flex w-32 h-full fixed left-0 bottom-0'
-			>
-				<LeftSide />
-			</motion.div>
+			<LeftSide />
 			<div className='h-[88vh] w-full mx-auto p-4'>
 				<Middle />
 
@@ -36,11 +27,7 @@ const Home = async () => {
 					id='about'
 					className='max-w-containerSmall mx-auto py-10 lgl:py-32 flex flex-col gap-8'
 				>
-					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ delay: 1.5 }}
-					>
+					<FadeIn delay={1.5}>
 						<Title title='Sobre mim' />
 						<div className='flex flex-col lgl:flex-row gap-16'>
 							<div className='w-full lgl:w-2/3 text-base text-slate-400 font-medium flex flex-col gap-4'>
@@ -57,19 +44,17 @@ const Home = async () => {
 								<p>Aqui estão algumas das tecnologias que venho trabalhando e aprendendo:</p>
 
 								<ul className='max-w-[450px] grid grid-cols-2 gap-2'>
-									<>
-										{skills.map((skill) => (
-											<li
-												key={skill._id}
-												className='flex items-center gap-2'
-											>
-												<span className='text-designColor'>
-													<AiFillThunderbolt />
-												</span>{" "}
-												{skill.skill}
-											</li>
-										))}
-									</>
+									{skills.map((skill) => (
+										<li
+											key={skill._id}
+											className='flex items-center gap-2'
+										>
+											<span className='text-designColor'>
+												<AiFillThunderbolt />
+											</span>{" "}
+											{skill.skill}
+										</li>
+									))}
 								</ul>
 							</div>
 							<div>
@@ -78,33 +63,30 @@ const Home = async () => {
 									alt={about.name}
 									width={500}
 									height={500}
-									className='rounded-lg  w-full object-cover'
+									className='rounded-lg w-full object-cover'
 								/>
 							</div>
 						</div>
-					</motion.div>
+					</FadeIn>
 				</section>
+
 				{/* Projects */}
 				<section
 					id='project'
 					className='max-w-container mx-auto lgl:px-20 py-24'
 				>
-					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ delay: 2.5 }}
-					>
+					<FadeIn delay={2.5}>
 						<Title title='Projetos' />
-					</motion.div>
-					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ delay: 2.5 }}
+					</FadeIn>
+					<FadeIn
+						delay={2.5}
 						className='mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-8'
 					>
 						{projects.map((project) => (
-							<Link
-								href={"/"}
+							<a
+								href={project.url}
+								target='_blank'
+								rel='noopener noreferrer'
 								key={project._id}
 								className='border border-slate-50 rounded-lg p-1 shadow-sm hover:scale-105 transition duration-500 hover:border-orange-200'
 							>
@@ -118,30 +100,21 @@ const Home = async () => {
 									/>
 								)}
 								<div className='mt-3 font-extrabold'>{project.name}</div>
-							</Link>
+							</a>
 						))}
-					</motion.div>
+					</FadeIn>
 				</section>
 
-				{/* contact */}
+				{/* Contact */}
 				<Contact />
 
-				{/* footer */}
+				{/* Footer */}
 				<Footer />
 			</div>
 
-			<motion.div
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ delay: 1.5 }}
-				className='hidden xl:inline-flex w-32 h-full fixed right-0 bottom-0'
-			>
-				<RightSitde />
-			</motion.div>
+			<RightSide />
 		</div>
 	)
 }
 
 export default Home
-
-// 2h:08:28

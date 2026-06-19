@@ -30,13 +30,6 @@ function Navbar() {
 		e.currentTarget.classList.add("active")
 	}
 
-	const handleClick = () => {}
-
-	const spring = {
-		type: "spring",
-		damping: 5,
-		stiffness: 200,
-	}
 	return (
 		<section className='w-full h-20 lg:h-[8vh] fixed top-0 z-50 bg-bodyColor px-4 drop-shadow-lg'>
 			<div className='max-w-container h-full mx-auto py-1 font-titleFont flex items-center justify-between'>
