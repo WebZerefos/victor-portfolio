@@ -154,7 +154,7 @@ function Navbar() {
 												ease: "easeIn",
 											}}
 										>
-											About
+											Sobre
 										</motion.li>
 									</Link>
 
@@ -172,7 +172,7 @@ function Navbar() {
 												ease: "easeIn",
 											}}
 										>
-											Projects
+											Projetos
 										</motion.li>
 									</Link>
 									<Link
@@ -189,7 +189,7 @@ function Navbar() {
 												ease: "easeIn",
 											}}
 										>
-											Contacts
+											Contato
 										</motion.li>
 									</Link>
 								</ul>
