@@ -1,5 +1,5 @@
 import { defineConfig } from "sanity"
-import { deskTool } from "sanity/desk"
+import { structureTool } from "sanity/structure"
 import { visionTool } from "@sanity/vision"
 
 import schemas from "./sanity/schemas"
@@ -10,7 +10,7 @@ const config = defineConfig({
 	title: "My 2023 Portfolio",
 	apiVersion: "2023-03-04",
 	basePath: "/admin",
-	plugins: [deskTool(), visionTool()],
+	plugins: [structureTool(), visionTool()],
 	schema: { types: schemas },
 })
 
